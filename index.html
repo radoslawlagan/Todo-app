@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body data-mode="light">
+
+  <header>
+  </header>
+
+  <div class="login-screen">
+    <h2>Log into your TODO account! 😊</h2>
+    <input type="text" placeholder="username" class="username">
+    <p class="username-error"></p>
+    <input type="password" placeholder="password" class="password">
+    <p class="password-error"></p>
+    <div class="btn-box">
+      <button class="btn-back">go back</button>
+      <button class="btn-login">log in</button>
+    </div>
+
+  </div>
+
+  <div class="todo-app">
+
+    <div class="heading">
+      <h1>todo</h1>
+      <div class="icon-box">
+        <img alt="log in icon" class="login-icon">
+        <img alt="mode switch icon" class="mode-icon" src="images/icon-moon.svg">
+      </div>
+    </div>
+
+    <input type="text" placeholder="Create a new todo..." class="input" maxlength="35">
+
+    <ul class="ul-list">
+    </ul>
+
+    <div class="menu-box">
+      <p><span></span> items left</p>
+      <div class="menu-box-middle">
+        <button class="btn btn-all">all</button>
+        <button class="btn btn-active">active</button>
+        <button class="btn btn-completed">completed</button>
+      </div>
+      <button class="btn btn-clear">clear completed</button>
+    </div>
+
+    <div class="menu-box-mobile">
+      <button class="btn btn-all">all</button>
+      <button class="btn btn-active">active</button>
+      <button class="btn btn-completed">completed</button>
+    </div>
+
+  </div>
+
+  <script src="./js/mode.js"></script>
+  <script src="./js/login.js"></script>
+  <script src="./js/todo.js"></script>
+</body>
+
+</html>
