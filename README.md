@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [HERE](link)
+- Live Site URL: [HERE](https://radoslawlagan.github.io/Todo-app/)
 
 ## My process
 
