@@ -26,17 +26,17 @@ const handleLoginScreen = () => {
 
 const checkForm = () => {
 	if (username.value === '') {
-		usernameErr.textContent = 'Username cannot be empty!'
+		usernameErr.textContent = 'Username cannot be empty'
 	} else if (username.value.length < usernameLength) {
-		usernameErr.textContent = `Username must be at least ${usernameLength} charachters long!`
+		usernameErr.textContent = `Username must be at least ${usernameLength} charachters long`
 	} else {
 		usernameErr.textContent = ''
 	}
 
 	if (password.value === '') {
-		passwordErr.textContent = 'Password cannot be empty!'
+		passwordErr.textContent = 'Password cannot be empty'
 	} else if (password.value.length < passwordLength) {
-		passwordErr.textContent = `Password must be at least ${passwordLength} charachters long!`
+		passwordErr.textContent = `Password must be at least ${passwordLength} charachters long`
 	} else {
 		passwordErr.textContent = ''
 	}

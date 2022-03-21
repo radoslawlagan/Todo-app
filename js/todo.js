@@ -66,6 +66,8 @@ const toggleState = (e) => {
 	}
 }
 
+const displayActive = () => {}
+
 countLi()
 
 input.addEventListener('keydown', checkKey)
