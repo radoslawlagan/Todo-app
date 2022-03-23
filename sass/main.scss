@@ -200,6 +200,7 @@ ul {
 	background-color: var(--bg-forms-color);
 	list-style: none;
 	transition: color 0.5s, background-color 0.5s;
+	overflow: hidden;
 }
 
 // li //
@@ -215,9 +216,9 @@ li.active {
 	background-color: var(--bg-forms-color);
 }
 
-li:last-of-type {
-	border-radius: 0;
-}
+// li:last-of-type {
+// 	border-radius: 0;
+// }
 
 .btn-li {
 	height: 25px;

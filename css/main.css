@@ -227,6 +227,7 @@ ul {
   list-style: none;
   -webkit-transition: color 0.5s, background-color 0.5s;
   transition: color 0.5s, background-color 0.5s;
+  overflow: hidden;
 }
 
 li.active {
@@ -245,10 +246,6 @@ li.active {
   -webkit-transition: border-bottom 0.5s, color 0.5s, background-color 0.5s;
   transition: border-bottom 0.5s, color 0.5s, background-color 0.5s;
   background-color: var(--bg-forms-color);
-}
-
-li:last-of-type {
-  border-radius: 0;
 }
 
 .btn-li {
