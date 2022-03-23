@@ -7,11 +7,11 @@ const handleMode = () => {
 	if (body.getAttribute('data-mode') === 'light') {
 		body.setAttribute('data-mode', 'dark')
 		modeBtn.src = 'images/icon-sun.svg'
-		header.classList.add('dark')
+		header.classList.toggle('dark')
 	} else {
 		body.setAttribute('data-mode', 'light')
 		modeBtn.src = 'images/icon-moon.svg'
-		header.classList.remove('dark')
+		header.classList.toggle('dark')
 	}
 }
 

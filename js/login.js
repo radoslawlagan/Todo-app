@@ -12,6 +12,12 @@ const loginBtn = document.querySelector('.btn-login')
 const usernameLength = 5
 const passwordLength = 8
 
+const checkLogInKey = (e) => {
+	if (e.key === 'Enter') {
+		checkForm()
+	}
+}
+
 const clearForm = () => {
 	username.value = ''
 	password.value = ''
@@ -44,4 +50,6 @@ const checkForm = () => {
 
 loginIcon.addEventListener('click', handleLoginScreen)
 backBtn.addEventListener('click', handleLoginScreen)
+username.addEventListener('keydown', checkLogInKey)
+password.addEventListener('keydown', checkLogInKey)
 loginBtn.addEventListener('click', checkForm)

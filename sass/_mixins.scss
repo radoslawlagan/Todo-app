@@ -1,0 +1,15 @@
+@mixin btn {
+	margin-inline: 1em;
+	border: none;
+	background: none;
+	text-transform: capitalize;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1.5rem;
+	color: var(--btn-color);
+	transition: color 0.3s;
+	cursor: pointer;
+
+	&:hover {
+		color: var(--btn-hover-color);
+	}
+}

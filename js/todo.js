@@ -8,25 +8,31 @@ const textLi = document.querySelectorAll('.li-text')
 const checkIcon = document.querySelectorAll('.check-icon')
 const deleteIcon = document.querySelectorAll('.delete-icon')
 
+const filterBtns = document.querySelectorAll('.btn')
 const btnAll = document.querySelectorAll('.btn-all')
 const btnActive = document.querySelectorAll('.btn-active')
 const btnCompleted = document.querySelectorAll('.btn-completed')
 const btnClear = document.querySelector('.btn-clear')
 
-const countLi = () => {
-	liNumber.textContent = allLi.length
+let liArr
+
+const getAllLi = () => {
+	liArr = Array.from(ulList.children)
 }
 
-const checkKey = (e) => {
+const countLi = () => {
+	liNumber.textContent = ulList.children.length
+}
+
+const checkInputKey = (e) => {
 	if (e.key === 'Enter') {
 		addToDo()
 	}
-	return
 }
 
 const addToDo = () => {
 	let newLi = document.createElement('li')
-	newLi.setAttribute('marked', 'active')
+	newLi.classList.add('active')
 
 	newLi.innerHTML = `
     <img alt="delete task icon" class="delete-icon">
@@ -57,19 +63,72 @@ const toggleState = (e) => {
 		e.target.classList.contains('check-icon')
 	) {
 		if (e.target.closest('li').classList.contains('checked')) {
+			e.target.closest('li').classList.toggle('active')
 			e.target.closest('li').classList.toggle('checked')
-			e.target.closest('li').setAttribute('marked', 'active')
 		} else {
+			e.target.closest('li').classList.toggle('active')
 			e.target.closest('li').classList.toggle('checked')
-			e.target.closest('li').setAttribute('marked', 'completed')
 		}
 	}
 }
 
-const displayActive = () => {}
+// filtering //
+
+const btnFilter = (e) => {
+	filterBtns.forEach((btn) => btn.classList.remove('btn-filter'))
+	e.target.classList.toggle('btn-filter')
+}
+
+const displayAll = () => {
+	getAllLi()
+
+	liArr.forEach((item) => (item.style.display = 'flex'))
+}
+
+const displayActive = () => {
+	getAllLi()
+
+	liArr.forEach((item) => {
+		if (item.classList.contains('checked')) {
+			item.style.display = 'none'
+		} else {
+			item.style.display = 'flex'
+		}
+	})
+}
+
+const displayCompleted = () => {
+	getAllLi()
+
+	liArr.forEach((item) => {
+		if (item.classList.contains('active')) {
+			item.style.display = 'none'
+		} else {
+			item.style.display = 'flex'
+		}
+	})
+}
+
+const clearCompleted = () => {
+	getAllLi()
+
+	liArr.forEach((item) => {
+		if (item.classList.contains('checked')) {
+			ulList.removeChild(item)
+		}
+	})
+
+	countLi()
+}
 
 countLi()
 
-input.addEventListener('keydown', checkKey)
+input.addEventListener('keydown', checkInputKey)
 ulList.addEventListener('click', deleteToDo)
 ulList.addEventListener('click', toggleState)
+
+filterBtns.forEach((btn) => btn.addEventListener('click', btnFilter))
+btnAll.forEach((btn) => btn.addEventListener('click', displayAll))
+btnActive.forEach((btn) => btn.addEventListener('click', displayActive))
+btnCompleted.forEach((btn) => btn.addEventListener('click', displayCompleted))
+btnClear.addEventListener('click', clearCompleted)

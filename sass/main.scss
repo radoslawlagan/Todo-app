@@ -1,4 +1,5 @@
 @import './colors';
+@import './mixins';
 
 *,
 *::before,
@@ -18,7 +19,8 @@
 	--btn-color: hsl(236, 9%, 61%);
 	--btn-hover-color: hsl(235, 21%, 11%);
 	--border-bottom-color: hsl(233, 11%, 84%);
-	--login-bg-color: hsl(0, 0%, 90%);
+	// --login-bg-color: hsl(0, 0%, 90%);
+	--test-color: hsl(0, 100%, 50%);
 }
 [data-mode='dark'] {
 	--bg-color: hsl(235, 21%, 11%);
@@ -30,7 +32,7 @@
 	--btn-color: hsl(233, 14%, 35%);
 	--btn-hover-color: hsl(234, 39%, 85%);
 	--border-bottom-color: hsl(233, 14%, 35%);
-	--login-bg-color: hsl(235, 21%, 3%);
+	// --login-bg-color: hsl(235, 21%, 3%);
 }
 
 html {
@@ -70,7 +72,7 @@ header.dark {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--login-bg-color);
+	background-color: var(--bg-color);
 	z-index: 5;
 	transition: top 1s;
 
@@ -79,7 +81,7 @@ header.dark {
 		margin-bottom: 0.5em;
 		text-align: center;
 		font-size: 3rem;
-		color: var(--heading-color);
+		color: var(--text-color);
 	}
 
 	p {
@@ -89,7 +91,13 @@ header.dark {
 
 	input {
 		margin-top: 1.5em;
+		padding-left: 1em;
 		width: clamp(300px, 80%, 600px);
+	}
+
+	::placeholder {
+		color: var(--text-color);
+		opacity: 1;
 	}
 
 	.btn-box {
@@ -135,6 +143,7 @@ header.dark {
 		border: 1px solid var(--border-bottom-color);
 		border-radius: 50%;
 		background: none;
+		transition: border 0.3s;
 	}
 }
 
@@ -195,7 +204,7 @@ ul {
 
 // li //
 
-li {
+li.active {
 	padding: 1.2em;
 	display: flex;
 	flex-direction: row-reverse;
@@ -203,6 +212,7 @@ li {
 	border-bottom: 1px solid var(--border-bottom-color);
 	color: var(--text-color);
 	transition: border-bottom 0.5s, color 0.5s, background-color 0.5s;
+	background-color: var(--bg-forms-color);
 }
 
 li:last-of-type {
@@ -234,6 +244,14 @@ li:last-of-type {
 }
 
 li.checked {
+	padding: 1.2em;
+	display: flex;
+	flex-direction: row-reverse;
+	align-content: center;
+	border-bottom: 1px solid var(--border-bottom-color);
+	color: var(--text-color);
+	transition: border-bottom 0.5s, color 0.5s, background-color 0.5s;
+
 	.check-icon {
 		content: url(../images/icon-check.svg);
 		display: inline;
@@ -273,6 +291,7 @@ li.checked {
 
 .menu-box {
 	width: 100%;
+	margin-bottom: 2em;
 	padding: 1.2em;
 	display: flex;
 	justify-content: space-between;
@@ -285,6 +304,8 @@ li.checked {
 
 .menu-box-mobile {
 	width: 100%;
+	margin-top: 1.5em;
+	margin-bottom: 2em;
 	padding: 1.2em;
 	display: flex;
 	justify-content: center;
@@ -292,7 +313,6 @@ li.checked {
 	border: none;
 	border-radius: 8px;
 	background-color: var(--bg-forms-color);
-	margin-top: 1.5em;
 	transition: color 0.5s, background-color 0.5s;
 
 	.btn {
@@ -305,31 +325,16 @@ li.checked {
 }
 
 .btn {
-	margin-inline: 1em;
-	border: none;
-	background: none;
-	text-transform: capitalize;
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 1.5rem;
-	color: var(--btn-color);
-	transition: color 0.3s;
-	cursor: pointer;
-
-	&:hover {
-		color: var(--btn-hover-color);
-	}
-}
-
-.btn-all,
-.btn-active,
-.btn-completed {
-	&:focus {
-		color: var(--focus);
-	}
+	@include btn;
 }
 
 .btn-clear {
+	@include btn;
 	margin-right: 0;
+}
+
+.btn-filter {
+	color: var(--focus);
 }
 
 // media //
