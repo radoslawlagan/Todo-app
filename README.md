@@ -20,7 +20,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+Light mode:
+
+![](./screenshot-light.jpg)
+
+Dark mode:
+
+![](./screenshot-dark.jpg)
 
 ### Links
 
