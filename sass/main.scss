@@ -127,6 +127,8 @@ header.dark {
 	top: 0;
 }
 
+// todo-app //
+
 .todo-app {
 	width: clamp(300px, 85%, 550px);
 	position: absolute;
@@ -216,10 +218,6 @@ li.active {
 	background-color: var(--bg-forms-color);
 }
 
-// li:last-of-type {
-// 	border-radius: 0;
-// }
-
 .btn-li {
 	height: 25px;
 	width: 25px;
@@ -290,6 +288,8 @@ li.checked {
 	}
 }
 
+// menu-boxes //
+
 .menu-box {
 	width: 100%;
 	margin-bottom: 2em;
@@ -297,7 +297,7 @@ li.checked {
 	display: flex;
 	justify-content: space-between;
 	border: none;
-	border-radius: 0 0 8px 8px;
+	border-radius: 8px;
 	color: var(--btn-color);
 	background-color: var(--bg-forms-color);
 	transition: color 0.5s, background-color 0.5s;

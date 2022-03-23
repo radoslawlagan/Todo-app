@@ -335,7 +335,7 @@ li.checked .li-text:hover ~ .btn-li {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border: none;
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px;
   color: var(--btn-color);
   background-color: var(--bg-forms-color);
   -webkit-transition: color 0.5s, background-color 0.5s;
